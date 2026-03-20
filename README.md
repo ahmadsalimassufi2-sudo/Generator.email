@@ -2,170 +2,181 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Ahmad ❤️ Putri</title>
-
-<!-- Font Lucu -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Chewy&family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+<title>Ucapan Lebaran 💖</title>
 
 <style>
 body {
     margin: 0;
-    height: 100vh;
-    background: linear-gradient(270deg, #ffd1dc, #ffe6f0, #ffc1dd);
-    background-size: 600% 600%;
-    animation: bgMove 10s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top, #ff9a9e, #fad0c4);
+    color: white;
 }
 
-@keyframes bgMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
-/* Love jatuh */
-.love {
-    position: absolute;
-    font-size: 30px;
-    animation: fall linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes fall {
-    0% {transform: translateY(-10vh) rotate(0deg);}
-    100% {transform: translateY(110vh) rotate(360deg);}
-}
-
-/* Bubble hati */
-.bubble {
-    position: absolute;
-    font-size: 25px;
-    animation: floatUp 8s ease-in-out infinite;
-    opacity: 0.4;
-}
-
-@keyframes floatUp {
-    0% {transform: translateY(100vh);}
-    100% {transform: translateY(-120vh);}
-}
-
-.container {
+/* BINGKAI ATAS & BAWAH */
+.top-border, .bottom-border {
+    position: fixed;
+    width: 100%;
     text-align: center;
+    font-size: 22px;
+    z-index: 10;
+    animation: geser 6s infinite alternate ease-in-out;
+}
+
+.top-border { top: 0; }
+.bottom-border { bottom: 0; }
+
+@keyframes geser {
+    from {transform: translateX(-30px);}
+    to {transform: translateX(30px);}
+}
+
+/* BINGKAI KIRI & KANAN */
+.side-border {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 22px;
     z-index: 10;
 }
 
+.left-border { left: 0; }
+.right-border { right: 0; }
+
+/* CONTAINER */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+/* BUTTON */
 button {
-    padding: 16px 40px;
-    font-size: 22px;
-    font-family: 'Chewy', cursive;
-    background: #ff5fa2;
-    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
     border: none;
-    border-radius: 45px;
+    border-radius: 20px;
+    background: #ff4d6d;
+    color: white;
     cursor: pointer;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.7);
 }
 
 button:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-.love-box {
+/* PESAN */
+#pesan {
     display: none;
-    animation: pop 1s ease forwards;
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    animation: fadeIn 1s ease;
 }
 
-@keyframes pop {
-    from {transform: scale(0) rotate(-10deg); opacity: 0;}
-    to {transform: scale(1) rotate(0deg); opacity: 1;}
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
 }
 
-.name {
-    font-family: 'Pacifico', cursive;
-    font-size: 44px;
-    color: #ff2f92;
-    text-shadow: 0 0 10px #fff;
-    animation: wiggle 2s infinite;
+/* LOVE HUJAN */
+.love {
+    position: absolute;
+    top: -50px;
+    animation: jatuh linear infinite;
 }
 
-@keyframes wiggle {
-    0% {transform: rotate(0deg);}
-    25% {transform: rotate(2deg);}
-    50% {transform: rotate(-2deg);}
-    75% {transform: rotate(2deg);}
-    100% {transform: rotate(0deg);}
-}
-
-.heart {
-    font-size: 80px;
-    margin: 15px 0;
-    animation: beat 0.9s infinite;
-}
-
-@keyframes beat {
-    0%,100% {transform: scale(1);}
-    50% {transform: scale(1.5);}
-}
-
-.subtitle {
-    font-family: 'Baloo 2', cursive;
-    font-size: 22px;
-    color: #ff4fa0;
-}
-
-.footer {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #ff7bbf;
+@keyframes jatuh {
+    to {
+        transform: translateY(110vh);
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Love jatuh -->
-<script>
-for(let i=0;i<25;i++){
-    document.write(`<div class="love" style="
-        left:${Math.random()*100}%;
-        animation-duration:${3+Math.random()*5}s;
-    ">💖</div>`);
-}
-for(let i=0;i<20;i++){
-    document.write(`<div class="bubble" style="
-        left:${Math.random()*100}%;
-        animation-duration:${5+Math.random()*6}s;
-    ">💗</div>`);
-}
-</script>
+<!-- ATAS -->
+<div class="top-border">
+💖🌸💗✨💕🌸💖✨💗💕🌸💖✨💗💕🌸💖✨💗💕🌸💖
+</div>
 
+<!-- BAWAH -->
+<div class="bottom-border">
+💖🌸💗✨💕🌸💖✨💗💕🌸💖✨💗💕🌸💖✨💗💕🌸💖
+</div>
+
+<!-- KIRI -->
+<div class="side-border left-border">
+🌸 💖 🌸 💕 🌸 💗 🌸 💖 🌸 💕 🌸 💗
+</div>
+
+<!-- KANAN -->
+<div class="side-border right-border">
+💗 🌸 💕 🌸 💖 🌸 💗 🌸 💕 🌸 💖 🌸
+</div>
+
+<!-- ISI -->
 <div class="container">
-    <button onclick="showLove()">tekan disini yaa sayanggg 💕</button>
+    <h1>🌙 Selamat Hari Raya 💖</h1>
 
-    <div class="love-box" id="loveBox">
-        <div class="name">Ahmad Salim Assufi</div>
-        <div class="heart">💞</div>
-        <div class="name">Putri Bunga Lestari</div>
+    <button id="tombol" onclick="tampilkanPesan()">💌 Tekan disini ya 💌</button>
 
-        <div class="subtitle">
-            Satu Hati • Satu Cinta • Selamanya
-        </div>
-
-        <div class="footer">
-            Setia itu pilihan, dan aku memilihmu 💖
-        </div>
+    <div id="pesan">
+        <p>
+            Assalamu'alaikum Laura 🥺💖🌸<br><br>
+            Di hari yang suci ini, aku ingin memohon maaf sebesar-besarnya
+            atas semua kesalahan aku ya 🙏🥺💕<br><br>
+            Semoga kita selalu diberi kebahagiaan, kesehatan,
+            dan hubungan yang makin baik 💗✨🌸<br><br>
+            Selamat Hari Raya Idul Fitri 🌙💖<br>
+            Mohon Maaf Lahir dan Batin 🤍🥰
+        </p>
     </div>
 </div>
 
 <script>
-function showLove(){
-    document.querySelector("button").style.display="none";
-    document.getElementById("loveBox").style.display="block";
+function tampilkanPesan() {
+    document.getElementById("pesan").style.display = "block";
+    document.getElementById("tombol").style.display = "none";
 }
+
+/* HUJAN LOVE */
+function createLove() {
+    const love = document.createElement("div");
+    love.classList.add("love");
+    love.innerHTML = ["💖","💕","💗","🌸"][Math.floor(Math.random()*4)];
+
+    love.style.left = Math.random() * window.innerWidth + "px";
+    love.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    love.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(love);
+
+    setTimeout(() => {
+        love.remove();
+    }, 5000);
+}
+
+setInterval(createLove, 200);
 </script>
 
 </body>
